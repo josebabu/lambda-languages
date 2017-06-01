@@ -6,3 +6,4 @@ def lambda_handler(value, context):
     print value
     time.sleep(2)
     print "end"
+    

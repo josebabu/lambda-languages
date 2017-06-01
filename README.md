@@ -8,12 +8,13 @@ The performance metrics for each execution is retrieved from AWS CloudWatch Logs
 
 Procedure:
 1. test-call function is triggered.
-2. test-call invokes language Lambdas - NodeTest, PyTest, DotnetTest
+2. test-call invokes language Lambdas - NodeTest, PyTest, LambdaCsharpTest
 3. Cold start test - Language Lambda runs 100 times and creates CloudWatch logs for each execution.
 4. loggingoutputtest function monitors CloudWatch logs and retrieves report for each execution.
 5. Wait for 5 minutes.
 6. Warm test - Language Lambda runs 100 times and creates CloudWatch logs for each execution.
 7. loggingoutputtest function monitors CloudWatch logs and retrieves report for each execution.
+
 8.Collect data from cold and warm runs to generate final report.
 
 Observations:

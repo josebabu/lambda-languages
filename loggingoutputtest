@@ -1,0 +1,22 @@
+'use strict';
+
+const zlib = require('zlib');
+
+exports.handler = (event, context, callback) => {
+    const payload = new Buffer(event.awslogs.data, 'base64');
+    zlib.gunzip(payload, (err, res) => {
+        if (err) {
+            return callback(err);
+        }
+        const parsed = JSON.parse(res.toString('utf8'));
+        var keysArray = Object.keys(parsed);
+        for (var i = 0; i < keysArray.length; i++) {
+            //var key = keysArray[i]; // here is "name" of object property
+            var value = parsed.logEvents; // here get value "by name" as it expected with objects
+            //console.log("python   ",value); //uncomment to uniquely specify the language in use
+        }
+        //console.log('msg:', parsed.logEvents[1].message);
+        //console.log('Decoded payload:', JSON.stringify(parsed));
+        callback(null, `Successfully processed ${parsed.logEvents.length} log events.`);
+    });
+};

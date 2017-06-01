@@ -1,0 +1,6 @@
+'use strict';
+
+exports.handler = (value, context) => {
+    console.log("value1 = ", value );
+    setTimeout(function() { console.log('timeout'); }, 2000);
+};

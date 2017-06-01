@@ -7,8 +7,8 @@ Each funtion reads input data and prints them on console.
 The performance metrics for each execution is retrieved from AWS CloudWatch Logs.
 
 Procedure:
-1. acg-test-call function is triggered.
-2. acg-test-call invokes language Lambdas - ACGNodeTest, ACGPyTest, ACGDotnetTest
+1. test-call function is triggered.
+2. test-call invokes language Lambdas - NodeTest, PyTest, DotnetTest
 3. Cold start test - Language Lambda runs 100 times and creates CloudWatch logs for each execution.
 4. loggingoutputtest function monitors CloudWatch logs and retrieves report for each execution.
 5. Wait for 5 minutes.

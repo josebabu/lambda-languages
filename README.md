@@ -14,8 +14,7 @@ Procedure:
 5. Wait for 5 minutes.
 6. Warm test - Language Lambda runs 100 times and creates CloudWatch logs for each execution.
 7. loggingoutputtest function monitors CloudWatch logs and retrieves report for each execution.
-
-8.Collect data from cold and warm runs to generate final report.
+8. Collect data from cold and warm runs to generate final report.
 
 Observations:
 1. Cold Start - Maximum execution time:
